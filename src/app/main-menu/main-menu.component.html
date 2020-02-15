@@ -1,0 +1,32 @@
+<section class="menu-main single d-flex justify-content-center align-items-center">
+    <app-header></app-header>
+    <div class="hello-text">
+        <h2 class="tooltip-class" title="helllo">
+            <span>{{userName}}, you're in yayyy !!</span>
+        </h2>
+    </div>
+    <div class="menu-links-one">
+        <button class="btn" routerLink="/createEvent">new event</button>
+    </div>
+</section>
+
+<section class="menu-main d-flex justify-content-center align-items-center">
+    <app-header></app-header>
+    <div class="menu-main-box">
+        <div class="hello-text">
+            <h2 class="tooltip-class" title="hello">
+                <span>{{userName}}, you're in yayyy !!</span>
+            </h2>
+        </div>
+        <div class="menu-links">
+            <ul class="mb-0">
+                <li class="active"><a routerLink="/createEvent">new event</a></li>
+                <li><a href="#">my event</a></li>
+                <li><a href="#">add bank account</a></li>
+                <li><a href="#">messages</a></li>
+                <li><a href="#">collections</a></li>
+                <li><a (click)="logout()">exit</a></li>
+            </ul>
+        </div>
+    </div>
+</section>

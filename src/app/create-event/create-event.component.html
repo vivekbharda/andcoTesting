@@ -1,0 +1,176 @@
+<app-header></app-header>
+<section class="create-event-main d-flex justify-content-center">
+    <div class="create-event-type d-flex justify-content-center align-items-center">
+        <!-- create event slider start -->
+        <div class="create-event-slider-box-width">
+            <form [formGroup]="eventForm">
+                <div class="create-event-slider text-center">
+                    <!-- your event type start -->
+                    <div class="create-event-type-box">
+                        <h3>Your event type <i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
+                        <div class="create-event-type-menu">
+                            <ul class="mb-0">
+                                <li class="active"><a>Wedding</a></li>
+                                <li><a>Birthday</a></li>
+                                <li><a>Funeral</a></li>
+                                <li><a>Reunion</a></li>
+                                <li><a>Club/Group</a></li>
+                                <li><a>Anniversary</a></li>
+                            </ul>
+                            <div *ngIf="f.eventType.touched && f.eventType.errors" class="invalid-feedback text-white">
+                                <div *ngIf="f.eventType.errors.required">Event Type is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- your event type end -->
+                    <!-- your event hashtag start -->
+                    <div class="create-event-hashtag-box">
+                        <h3>Your event hashtag</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="hashTag"
+                                ngModel="{{createdEventDetails ? createdEventDetails.hashTag : ''}}"
+                                [ngClass]="{ 'is-invalid': f.hashTag.touched && f.hashTag.errors }"
+                                placeholder="hashtag">
+                            <div class="col-md-2" *ngIf="f.hashTag.touched && f.hashTag.errors"
+                                class="invalid-feedback text-white">
+                                <div *ngIf="f.hashTag.errors.required">Event HashTag is Required
+                                </div>
+                                <div *ngIf="f.hashTag.errors.minlength">Name must be at least 4
+                                    Characters
+                                </div>
+                            </div>
+                            <span>#</span>
+                        </div>
+                    </div>
+                    <!-- your event hashtag end -->
+                    <!-- your event name start -->
+                    <div>
+                        <div class="create-event-name-box">
+                            <h3>Your Event Title e.g Lola Ajayi’s 70th birthday</h3>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="eventTitle" formControlName="eventTitle"
+                                    ngModel="{{createdEventDetails ? createdEventDetails.eventTitle : ''}}"
+                                    [ngClass]="{ 'is-invalid': f.eventTitle.touched && f.eventTitle.errors }">
+                                <div class="col-md-2" *ngIf="f.eventTitle.touched && f.eventTitle.errors"
+                                    class="invalid-feedback text-white">
+                                    <div *ngIf="f.eventTitle.errors.required">Event Title is Required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- your event name end -->
+                    <!-- your event profile start -->
+                    <div class="create-event-profile-box">
+                        <h3>Your Event Profile Photo</h3>
+                        <div class="profile-picture">
+                            <img * ngIf="createdEventDetails && createdEventDetails.profilePhoto"
+                                src="{{path}}{{createdEventDetails.profilePhoto}}" class="rounded-circle">
+                            <img [src]="imgURL" height="200" class="float-right rounded-circle" id="imageFilter"
+                                onerror="this.src='/assets/images/profile_img.png'">
+                        </div>
+                        <div class="profile-photo-upload mt-3">
+                            <label for="upload_profile">
+                                <img src="../../assets/images/camera.png" class="upload_img_icon" alt="camera icon">
+                            </label>
+                            <input type="file" (change)="addFile($event.target.files)"
+                                accept="image/png, image/jpeg, image/jpg" id="upload_profile" style="display: none;">
+                            <span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- your event profile end -->
+                    <!-- your event background choose start -->
+                    <div class="create-event-background-box">
+                        <h3>Your Event Page Background</h3>
+                        <div class="main-background-picture">
+                            <!-- <img src="../../assets/images/background_main.png" alt="profile picture"> -->
+                            <img [src]="themeUrl" id="imageFilter"
+                                onerror="this.src='/assets/images/background_main.png'">
+                        </div>
+                        <div class="background-photo-upload">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b1.png" alt="background 1" id="background1"
+                                            (click)="defaultBackgroundImage('../../assets/images/b1.png')">
+                                    </div>
+                                    <span>floral</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b2.png" alt="background 2"
+                                            (click)="defaultBackgroundImage('../../assets/images/b2.png')">
+                                    </div>
+                                    <span>marble</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b3.png" alt="background 3"
+                                            (click)="defaultBackgroundImage('../../assets/images/b3.png')">
+                                    </div>
+                                    <span>wood</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b4.png" alt="background 4"
+                                            (click)="defaultBackgroundImage('../../assets/images/b4.png')">
+                                    </div>
+                                    <span>origami</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b5.png" alt="background 5"
+                                            (click)="defaultBackgroundImage('../../assets/images/b5.png')">
+                                    </div>
+                                    <span>classic</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b6.png" alt="background 6"
+                                            (click)="defaultBackgroundImage('../../assets/images/b6.png')">
+                                    </div>
+                                    <span>lines</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b7.png" alt="background 7"
+                                            (click)="defaultBackgroundImage('../../assets/images/b7.png')">
+                                    </div>
+                                    <span>luxury</span>
+                                </div>
+                                <div class="col-3">
+                                    <div class="sample_bg">
+                                        <img src="../../assets/images/b8.png" alt="background 8"
+                                            (click)="defaultBackgroundImage('../../assets/images/b8.png')">
+                                    </div>
+                                    <span>instrument</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- your event background choose end -->
+                    <!-- your event Prising tip start -->
+                    <div class="create-event-pricing-box">
+                        <h3> Aso Ebi Pricing Tip</h3>
+                        <div class="content-prising">
+                            <ol type="number" class="mb-0">
+                                <li>To each aso ebi order, a processing
+                                    fee of 1.5% + N70 will be added.</li>
+                                <li>AndCo can deliver your fabric to guests.</li>
+                                <li>A delivery cost of N700 will be added to
+                                    each cart, if you choose us to handle
+                                    logistics.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- your event prising tip end -->
+                </div>
+            </form>
+            <button class="btn created-event-custom-button" (click)="createdEventDetails? updateEvent() : addEvent()"
+                [disabled]="isDisable || eventForm.invalid">Continue</button>
+        </div>
+        <!-- create event slider end -->
+
+    </div>
+</section>

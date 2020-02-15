@@ -1,0 +1,285 @@
+.andco-logo {
+  top: 6%;
+}
+
+.join-enter-main {
+  background-image: url('../../assets/images/join.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  min-height: 100vh;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.join-fl-name, .join-with-your-social, .join-with-your-email, .join-with-your-code, .join-enter-password {
+  width: 585px;
+  height: 585px;
+}
+
+.join-enter {
+  width: 100%;
+  display: inline-block;
+  padding: 10% 50px 0;
+}
+
+.join-enter a.float-left, .join-enter a.float-right {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.join-enter a.float-left {
+  color: #5D8B60;
+}
+
+.join-enter a.float-right {
+  color: #000000;
+}
+
+.join-enter-quote {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.join-enter-quote p {
+  font-size: 40px;
+}
+
+.join-enter-inputs {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.join-enter-inputs input::placeholder {
+  color: #ACC9B1 !important;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.join-enter-inputs input {
+  font-family: 'Advent Pro', 'sans-sarif';
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #2B879B;
+  width: 80%;
+  height: 50px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #528D69;
+  font-weight: 600;
+}
+
+.join-enter-inputs input:focus {
+  box-shadow: none;
+}
+
+.join-submit button {
+  background-color: #528D69;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 7px 30px;
+  outline: none;
+}
+
+.join-with-your-email .join-social, .join-with-your-code .join-social, .join-enter-password .join-social {
+  margin-top: 80px;
+}
+
+.join-with-your-social .join-social {
+  margin-top: 30px;
+}
+
+.join-social ul {
+  width: 100%;
+  text-align: center;
+}
+
+.join-social ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.join-social ul li a img {
+  height: 70px;
+  width: 70px;
+}
+
+/* responsive css start */
+
+@media(max-width: 1700px) {
+  .join-enter {
+    padding: 13% 50px 0;
+  }
+}
+
+@media(max-width: 1600px) {
+  .join-fl-name, .join-with-your-social, .join-with-your-email, .join-with-your-code, .join-enter-password {
+    width: 515px;
+    height: 515px;
+  }
+  .join-enter-inputs input {
+    height: 40px;
+    font-size: 30px;
+  }
+  .join-enter-quote p {
+    font-size: 30px;
+  }
+  .join-enter-inputs input::placeholder {
+    font-size: 26px !important;
+  }
+  .join-social ul li a img {
+    height: 60px;
+    width: 60px;
+  }
+  .join-submit button {
+    padding: 4px 30px;
+  }
+  .join-enter {
+    padding: 10% 50px 0;
+  }
+}
+
+@media(max-width: 1366px) {
+  .join-fl-name, .join-with-your-social, .join-with-your-email, .join-with-your-code, .join-enter-password {
+    width: 460px;
+    height: 475px;
+  }
+  .join-with-your-email .join-social, .join-with-your-code .join-social, .join-enter-password .join-social {
+    margin-top: 60px;
+  }
+  .join-enter-inputs input {
+    margin-bottom: 10px;
+  }
+  .join-enter {
+    padding: 8% 50px 0;
+  }
+}
+
+@media(max-width: 1199px) {
+  .join-enter a.float-left, .join-enter a.float-right {
+    font-size: 34px;
+  }
+  .join-enter {
+    padding: 11% 50px 0;
+  }
+  .join-enter-quote p {
+    font-size: 26px;
+  }
+  .join-social ul li a img {
+    height: 50px;
+    width: 50px;
+  }
+  .join-submit button {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 991px) {
+  .join-enter {
+    padding: 13% 50px 0;
+  }
+  .join-enter a.float-left, .join-enter a.float-right {
+    font-size: 30px;
+  }
+  .join-enter-quote p {
+    font-size: 26px;
+  }
+  .join-enter-inputs input {
+    font-size: 26px;
+  }
+  .join-social ul li a img {
+    height: 40px;
+    width: 40px;
+  }
+  .join-enter-inputs input{
+    border-bottom: 1px solid #2B879B;
+  }
+}
+
+@media(max-width: 767px) {
+  .join-enter-main {
+    background-position: center right calc(50% - 4px);
+  }
+}
+
+@media(max-width: 575px) {
+  .join-enter a.float-left, .join-enter a.float-right {
+    font-size: 28px;
+  }
+  .join-enter {
+    padding: 14% 50px 0;
+  }
+  .join-enter-quote p, .join-enter-inputs input {
+    font-size: 24px;
+  }
+  .join-enter-inputs input::placeholder {
+    font-size: 26px !important;
+  }
+}
+
+@media(max-width: 400px) {
+  .join-fl-name, .join-with-your-social, .join-with-your-email, .join-with-your-code, .join-enter-password {
+    width: 340px;
+    height: 445px;
+  }
+  .join-enter a.float-left, .join-enter a.float-right {
+    font-size: 24px;
+  }
+  .join-enter-quote p {
+    margin-top: 10px;
+    font-size: 22px;
+  }
+  .join-enter-inputs input::placeholder, .join-enter-inputs input {
+    font-size: 22px !important;
+  }
+  .join-submit button {
+    padding: 0px 20px;
+  }
+}
+
+@media(max-width: 330px) {
+  .join-fl-name, .join-with-your-social, .join-with-your-email, .join-with-your-code, .join-enter-password {
+    width: 290px;
+    height: 345px;
+  }
+  .join-enter-quote p {
+    font-size: 18px;
+  }
+  .join-enter {
+    padding: 20% 50px 0;
+  }
+  .join-enter-quote p {
+    margin-top: -7px;
+  }
+  .join-enter-inputs input {
+    height: 26px;
+  }
+  .join-submit button {
+    font-size: 16px;
+  }
+  .join-social ul li a img {
+    height: 30px;
+    width: 30px;
+  }
+  .join-with-your-email .join-social, .join-with-your-code .join-social, .join-enter-password .join-social {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .join-enter-main {
+    background-size: 185%;
+  }
+}
+
+@media(max-width: 812px) and (orientation: landscape) {
+  .join-enter-main {
+    background-size: 270%;
+  }
+}
